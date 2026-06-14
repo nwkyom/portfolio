@@ -34,7 +34,7 @@ const { title, company, description, image, stack } = Astro.props;
 
   <!-- Content -->
   <div class="p-5 flex flex-col flex-1">
-    <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+    <h3 class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--text-primary)] transition-colors">
       {title}
     </h3>
     {company && (
