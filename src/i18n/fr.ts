@@ -26,7 +26,7 @@ export default {
   },
   projects: {
     title: 'Projets',
-    subtitle: 'Une sélection de projets sur lesquels j\'ai travaillé',
+    subtitle: 'L\'ensemble des projets sur lesquels j\'ai travaillé',
     viewMore: 'En savoir plus',
   },
   contact: {
