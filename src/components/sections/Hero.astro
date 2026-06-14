@@ -1,0 +1,93 @@
+---
+import { personal } from '@/data/personal';
+import { t, type Locale } from '@/i18n/utils';
+import CounterStat from './CounterStat.astro';
+import FadeIn from '@/components/animations/FadeIn.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const i18n = t(locale);
+const base = '/portfolio';
+---
+<section class="relative overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-transparent to-purple-50 dark:from-primary-950/20 dark:via-transparent dark:to-purple-950/20"></div>
+
+  <div class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+    <div class="text-center">
+      <!-- Greeting -->
+      <FadeIn>
+        <p class="text-lg sm:text-xl text-[var(--text-secondary)] mb-2">
+          {i18n.hero.greeting}
+        </p>
+      </FadeIn>
+
+      <!-- Name -->
+      <FadeIn delay={0.15}>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+          <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
+            {personal.name}
+          </span>
+        </h1>
+      </FadeIn>
+
+      <!-- Subtitle -->
+      <FadeIn delay={0.3}>
+        <p class="mt-4 text-xl sm:text-2xl text-[var(--text-secondary)] max-w-2xl mx-auto">
+          {personal.title[locale]}
+        </p>
+      </FadeIn>
+
+      <!-- Summary -->
+      <FadeIn delay={0.45}>
+        <p class="mt-6 text-base sm:text-lg text-[var(--text-muted)] max-w-3xl mx-auto leading-relaxed">
+          {personal.summary[locale]}
+        </p>
+      </FadeIn>
+
+      <!-- CTA buttons -->
+      <FadeIn delay={0.6}>
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href={`${base}/${locale}/experience`}
+            class="inline-flex items-center px-6 py-3 rounded-lg bg-primary-600 text-white font-medium
+                   hover:bg-primary-700 transition-colors duration-200 shadow-lg shadow-primary-500/25"
+          >
+            {i18n.hero.cta.experience}
+            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a
+            href={`${base}/${locale}/projects`}
+            class="inline-flex items-center px-6 py-3 rounded-lg border border-[var(--border-color)]
+                   text-[var(--text-primary)] font-medium hover:bg-[var(--bg-secondary)]
+                   transition-colors duration-200"
+          >
+            {i18n.hero.cta.projects}
+          </a>
+          <a
+            href={`${base}/${locale}/contact`}
+            class="inline-flex items-center px-6 py-3 rounded-lg border border-[var(--border-color)]
+                   text-[var(--text-primary)] font-medium hover:bg-[var(--bg-secondary)]
+                   transition-colors duration-200"
+          >
+            {i18n.hero.cta.contact}
+          </a>
+        </div>
+      </FadeIn>
+    </div>
+
+    <!-- Stats -->
+    <FadeIn delay={0.8} y={40}>
+      <div class="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto">
+        <CounterStat value={personal.stats.yearsExperience} label={i18n.stats.years} />
+        <CounterStat value={personal.stats.projects} label={i18n.stats.projects} />
+        <CounterStat value={personal.stats.companies} label={i18n.stats.companies} />
+      </div>
+    </FadeIn>
+  </div>
+</section>

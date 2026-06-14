@@ -1,0 +1,52 @@
+---
+interface Props {
+  value: number;
+  label: string;
+  prefix?: string;
+  suffix?: string;
+}
+
+const { value, label, prefix = '', suffix = '+' } = Astro.props;
+---
+<div class="text-center">
+  <div class="text-3xl sm:text-4xl font-bold text-primary-500">
+    <span class="counter-prefix">{prefix}</span>
+    <span class="counter-value" data-target={value}>0</span>
+    <span class="counter-suffix">{suffix}</span>
+  </div>
+  <p class="mt-2 text-sm text-[var(--text-secondary)]">{label}</p>
+</div>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initCounters() {
+    const counters = document.querySelectorAll('.counter-value');
+    counters.forEach((counter) => {
+      const target = parseInt(counter.getAttribute('data-target') || '0');
+      const obj = { val: 0 };
+
+      ScrollTrigger.create({
+        trigger: counter,
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.to(obj, {
+            val: target,
+            duration: 2,
+            ease: 'power1.out',
+            onUpdate: () => {
+              counter.textContent = Math.round(obj.val).toString();
+            },
+          });
+        },
+      });
+    });
+  }
+
+  initCounters();
+  document.addEventListener('astro:after-swap', initCounters);
+</script>

@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import SkillsGrid from '@/components/sections/SkillsGrid.astro';
+import { personal } from '@/data/personal';
+---
+<BaseLayout
+  title={`${personal.name} — ${personal.title.en}`}
+  description={personal.summary.en}
+  locale="en"
+>
+  <Hero locale="en" />
+  <SkillsGrid locale="en" />
+</BaseLayout>

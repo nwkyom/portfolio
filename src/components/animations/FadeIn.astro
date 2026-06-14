@@ -1,0 +1,54 @@
+---
+interface Props {
+  class?: string;
+  delay?: number;
+  duration?: number;
+  y?: number;
+}
+
+const { class: className = '', delay = 0, duration = 0.8, y = 30 } = Astro.props;
+---
+<div
+  class:list={['gsap-fade-in opacity-0', className]}
+  data-gsap-delay={delay}
+  data-gsap-duration={duration}
+  data-gsap-y={y}
+>
+  <slot />
+</div>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initFadeIn() {
+    const elements = document.querySelectorAll('.gsap-fade-in');
+    elements.forEach((el) => {
+      const delay = parseFloat(el.getAttribute('data-gsap-delay') || '0');
+      const duration = parseFloat(el.getAttribute('data-gsap-duration') || '0.8');
+      const y = parseFloat(el.getAttribute('data-gsap-y') || '30');
+
+      gsap.fromTo(
+        el,
+        { opacity: 0, y },
+        {
+          opacity: 1,
+          y: 0,
+          duration,
+          delay,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            once: true,
+          },
+        }
+      );
+    });
+  }
+
+  initFadeIn();
+  document.addEventListener('astro:after-swap', initFadeIn);
+</script>

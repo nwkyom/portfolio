@@ -1,0 +1,49 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProjectCard from '@/components/sections/ProjectCard.astro';
+import FadeIn from '@/components/animations/FadeIn.astro';
+import { getCollection } from 'astro:content';
+import { t } from '@/i18n/utils';
+import { personal } from '@/data/personal';
+
+const i18n = t('en');
+
+const allProjects = await getCollection('projects');
+const projects = allProjects
+  .filter((p) => p.data.locale === 'en')
+  .sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout
+  title={`${i18n.projects.title} — ${personal.name}`}
+  description={i18n.projects.subtitle}
+  locale="en"
+>
+  <section class="py-16 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <FadeIn>
+        <div class="text-center mb-16">
+          <h1 class="text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">
+            {i18n.projects.title}
+          </h1>
+          <p class="mt-4 text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
+            {i18n.projects.subtitle}
+          </p>
+        </div>
+      </FadeIn>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project, index) => (
+          <FadeIn delay={index * 0.1}>
+            <ProjectCard
+              title={project.data.title}
+              company={project.data.company}
+              description={project.data.description}
+              image={project.data.image}
+              stack={project.data.stack}
+            />
+          </FadeIn>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

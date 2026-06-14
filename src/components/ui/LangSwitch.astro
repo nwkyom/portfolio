@@ -1,0 +1,22 @@
+---
+import { getAlternateLocale, getLocalizedPath, type Locale } from '@/i18n/utils';
+
+interface Props {
+  locale: Locale;
+  currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+const altLocale = getAlternateLocale(locale);
+const altPath = getLocalizedPath(currentPath, altLocale);
+---
+<a
+  href={altPath}
+  class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium
+         text-[var(--text-secondary)] hover:text-[var(--text-primary)]
+         hover:bg-[var(--bg-secondary)] transition-colors duration-200"
+  aria-label={`Switch to ${altLocale === 'fr' ? 'French' : 'English'}`}
+>
+  <span class="text-base">{altLocale === 'fr' ? '🇫🇷' : '🇬🇧'}</span>
+  <span class="hidden sm:inline">{altLocale === 'fr' ? 'FR' : 'EN'}</span>
+</a>
