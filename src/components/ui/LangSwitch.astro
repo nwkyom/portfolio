@@ -17,6 +17,20 @@ const altPath = getLocalizedPath(currentPath, altLocale);
          hover:bg-[var(--bg-secondary)] transition-colors duration-200"
   aria-label={`Switch to ${altLocale === 'fr' ? 'French' : 'English'}`}
 >
-  <span class="text-base">{altLocale === 'fr' ? '🇫🇷' : '🇬🇧'}</span>
+  {altLocale === 'fr' ? (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" class="w-5 h-auto rounded-sm" aria-hidden="true">
+      <rect width="1" height="2" fill="#002395"/>
+      <rect x="1" width="1" height="2" fill="#fff"/>
+      <rect x="2" width="1" height="2" fill="#ED2939"/>
+    </svg>
+  ) : (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" class="w-5 h-auto rounded-sm" aria-hidden="true">
+      <rect width="60" height="30" fill="#012169"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/>
+      <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
+      <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>
+    </svg>
+  )}
   <span class="hidden sm:inline">{altLocale === 'fr' ? 'FR' : 'EN'}</span>
 </a>
