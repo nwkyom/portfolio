@@ -4,6 +4,7 @@ company: Thales Alenia Space
 description: "Multi-site platform for planning and executing LEO payload tests — constellation of 46 satellites."
 stack: [Java/J2EE, Swing, JBoss, Hibernate, Spring]
 order: 17
+icon: satellite
 locale: en
 ---
 

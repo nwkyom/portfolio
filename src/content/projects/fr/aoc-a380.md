@@ -4,6 +4,7 @@ company: Rockwell Collins France
 description: "Application d'observation de données avioniques et de communication pilote/copilote via protocole POP3."
 stack: [Java, Hibernate, Spring, JMS, Corba, Oracle, Jenkins, Sonar]
 order: 13
+icon: aerospace
 locale: fr
 ---
 

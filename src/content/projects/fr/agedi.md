@@ -4,6 +4,7 @@ company: Collectivités et Administrations
 description: "Suite d'outils pour administrations publiques : gestion des communautés, facturation et gestion cadastrale."
 stack: [Java, Spring, Hibernate, AngularJS, DevExtreme, Jasper, Docker]
 order: 7
+icon: admin
 locale: fr
 ---
 

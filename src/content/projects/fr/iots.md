@@ -4,6 +4,7 @@ company: Thales Alenia Space
 description: "Plateforme multi-sites de planification et d'exécution de tests de charge utile en orbite basse — constellation de 46 satellites."
 stack: [Java/J2EE, Swing, JBoss, Hibernate, Spring]
 order: 17
+icon: satellite
 locale: fr
 ---
 

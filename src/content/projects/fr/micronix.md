@@ -4,6 +4,7 @@ company: Micropol
 description: "ERP de gestion commerciale leader en Polynésie française. Développement de modules web (Dashboard, PWA inventaire), outils de déploiement Python, maintenance et évolution du legacy."
 stack: [Java 21, Spring Boot 3, Vue.js 3, Quasar, Angular, Python 3, Flask, MariaDB, Docker, GitLab CI/CD, PWA, Scandit SDK]
 order: 1
+icon: erp
 locale: fr
 ---
 

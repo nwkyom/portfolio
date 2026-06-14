@@ -27,6 +27,7 @@ const projects = defineCollection({
     stack: z.array(z.string()),
     order: z.number(),
     locale: z.enum(['fr', 'en']),
+    icon: z.enum(['satellite', 'aerospace', 'agriculture', 'gis', 'erp', 'urban', 'admin']).optional(),
   }),
 });
 

@@ -4,6 +4,7 @@ company: Airbus
 description: "VCOM protocol communication interface generation tool between the A350 SP and system integration benches."
 stack: [Python, Eclipse PyDev]
 order: 12
+icon: aerospace
 locale: en
 ---
 

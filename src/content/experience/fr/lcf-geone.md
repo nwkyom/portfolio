@@ -1,6 +1,6 @@
 ---
 company: LCF
-project: Geone
+project: Geonet
 role: Chef technique / Développeur Full Stack
 startDate: "Mars 2014"
 endDate: "Sept 2014"

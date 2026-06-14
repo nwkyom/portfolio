@@ -4,6 +4,7 @@ company: Astrium
 description: "Application web de surveillance et traitement de télémesures multi-satellite."
 stack: [Java/J2EE, Hibernate, JSP/Servlets, JavaScript, DOJO]
 order: 15
+icon: satellite
 locale: fr
 ---
 

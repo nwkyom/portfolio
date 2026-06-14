@@ -4,6 +4,7 @@ company: CNES
 description: "Semi-automated satellite image annotation tool embedding a deep learning model, with OpenLayers map interface."
 stack: [Python 3, Flask, SQLAlchemy, GeoAlchemy, Angular 13, OpenLayers 6, PostgreSQL, PostGIS, Docker]
 order: 2
+icon: satellite
 locale: en
 ---
 

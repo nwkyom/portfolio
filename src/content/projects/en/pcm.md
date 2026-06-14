@@ -4,6 +4,7 @@ company: Thales Alenia Space
 description: "Configuration, monitoring, and control application for satellite payload equipment."
 stack: [Java J2EE, JBoss, Swing, EJB, Hibernate, Spring, MySQL, SNMP]
 order: 14
+icon: satellite
 locale: en
 ---
 

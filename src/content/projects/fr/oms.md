@@ -4,6 +4,7 @@ company: Airbus Defence and Space
 description: "Algorithme de désennuagement d'images satellite déployé en microservices sur GCP avec orchestration Kubernetes."
 stack: [Java, Spring Boot, Python, Angular, Gradle, Docker, Kubernetes, GCP (GKE, DataStore, PubSub, CloudRun), Terraform, Jenkins]
 order: 8
+icon: satellite
 locale: fr
 ---
 

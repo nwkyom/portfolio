@@ -43,6 +43,7 @@ const projects = await Promise.all(
               description={project.data.description}
               image={project.data.image}
               stack={project.data.stack}
+              icon={project.data.icon}
             >
               <project.Content slot="body" />
             </ProjectCard>

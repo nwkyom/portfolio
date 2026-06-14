@@ -4,6 +4,7 @@ company: Airbus Defence and Space
 description: "Simulation application launcher and monitoring tool with user-friendly configuration interface."
 stack: [Python, Angular 6, PrimeNG, Material]
 order: 6
+icon: satellite
 locale: en
 ---
 
