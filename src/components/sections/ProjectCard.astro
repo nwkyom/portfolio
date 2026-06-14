@@ -42,9 +42,16 @@ const { title, company, description, image, stack } = Astro.props;
         {company}
       </p>
     )}
-    <p class="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-3">
+    <p class="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
       {description}
     </p>
+
+    <!-- Body (rendered markdown) -->
+    <div class="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed prose prose-sm dark:prose-invert max-w-none
+                prose-ul:mt-1 prose-ul:space-y-0.5 prose-li:my-0 prose-headings:text-xs prose-headings:font-semibold
+                prose-headings:text-[var(--text-muted)] prose-headings:uppercase prose-headings:tracking-wide prose-headings:mt-3">
+      <slot name="body" />
+    </div>
 
     <!-- Stack -->
     <div class="mt-4 flex flex-wrap gap-1.5">

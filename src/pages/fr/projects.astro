@@ -2,16 +2,19 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ProjectCard from '@/components/sections/ProjectCard.astro';
 import FadeIn from '@/components/animations/FadeIn.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import { t } from '@/i18n/utils';
 import { personal } from '@/data/personal';
 
 const i18n = t('fr');
 
 const allProjects = await getCollection('projects');
-const projects = allProjects
-  .filter((p) => p.data.locale === 'fr')
-  .sort((a, b) => a.data.order - b.data.order);
+const projects = await Promise.all(
+  allProjects
+    .filter((p) => p.data.locale === 'fr')
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(async (p) => ({ ...p, Content: (await render(p)).Content }))
+);
 ---
 <BaseLayout
   title={`${i18n.projects.title} — ${personal.name}`}
@@ -40,7 +43,9 @@ const projects = allProjects
               description={project.data.description}
               image={project.data.image}
               stack={project.data.stack}
-            />
+            >
+              <project.Content slot="body" />
+            </ProjectCard>
           </FadeIn>
         ))}
       </div>
