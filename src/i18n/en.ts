@@ -35,7 +35,9 @@ export default {
     email: 'Email',
     linkedin: 'LinkedIn',
     github: 'GitHub',
-    downloadCv: 'Download my resume',
+    downloadCvShort: 'Resume (Summary)',
+    downloadCvFull: 'Resume (Full)',
+    cvUpdated: 'Updated January 2026',
     or: 'or',
   },
   footer: {

@@ -35,7 +35,9 @@ export default {
     email: 'Email',
     linkedin: 'LinkedIn',
     github: 'GitHub',
-    downloadCv: 'Télécharger mon CV',
+    downloadCvShort: 'CV Synthèse',
+    downloadCvFull: 'CV Complet',
+    cvUpdated: 'Mis à jour en janvier 2026',
     or: 'ou',
   },
   footer: {
