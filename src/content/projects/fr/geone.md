@@ -4,7 +4,7 @@ company: LCF
 description: "Système d'informations géolocalisées dédié à l'agriculture de précision."
 stack: [Java, Spring, Hibernate, ExtJS, KnockoutJS, jQuery, GeoServer]
 order: 10
-icon: gis
+icon: agriculture
 locale: fr
 ---
 
