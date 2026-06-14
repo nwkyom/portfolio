@@ -3,7 +3,7 @@ company: Micropol
 project: Micronix
 role: Référent Technique / Développeur FullStack
 startDate: "Sept 2022"
-endDate: "Aujourd'hui"
+endDate: "Mars 2026"
 location: Tahiti, Polynésie Française
 description: "Micropol, éditeur du logiciel Micronix — solution de gestion commerciale — est un acteur de premier plan en Polynésie française pour les supermarchés, le commerce de détail et les entreprises de gros/import/export."
 stack:

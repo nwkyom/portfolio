@@ -3,7 +3,7 @@ company: Micropol
 project: Micronix
 role: Tech Lead / FullStack Developer
 startDate: "2022-09"
-endDate: "Present"
+endDate: "Mar 2026"
 location: Tahiti, French Polynesia
 description: "Micropol, publisher of the Micronix software — a commercial management solution — is a key player in French Polynesia for supermarkets, retail, and wholesale/import/export businesses."
 stack:
