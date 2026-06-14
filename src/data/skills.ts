@@ -27,7 +27,17 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Spring Boot', level: 5 },
       { name: 'Hibernate / JPA', level: 5 },
       { name: 'Flask / Gunicorn', level: 4 },
-      { name: 'SQLAlchemy', level: 3 },
+      { name: 'SQLAlchemy / GeoAlchemy', level: 3 },
+      { name: 'Peewee', level: 3 },
+      { name: 'EJB', level: 2 },
+    ],
+  },
+  {
+    label: { fr: 'Messaging', en: 'Messaging' },
+    skills: [
+      { name: 'RabbitMQ', level: 3 },
+      { name: 'GCP PubSub', level: 4 },
+      { name: 'JMS', level: 2 },
     ],
   },
   {
